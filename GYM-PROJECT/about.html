@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us - Burn It Gym</title>
+<link rel="stylesheet" href="GYM.CSS">
+
+<style>
+
+/* GLOBAL */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: radial-gradient(circle at top, #111, #000);
+    color: white;
+
+    overflow-x: hidden;   /* FIX scroll issue */
+}
+
+.about
+/* CONTAINER (SIDE SPACING) */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* ABOUT */
+.about {
+    text-align: center;
+    padding: 10px;
+}
+
+.about h1 {
+    color: #ff5a1f;
+    font-size: 40px;
+    margin-top: 110px;
+}
+
+.about p {
+    max-width: 700px;
+    font-size: 20px;
+    margin: auto;
+    color: #ccc;
+}
+
+/* SECTION TITLE */
+.section-title {
+    text-align: center;
+    color: #ff5a1f;
+    margin-top: 60px;
+    margin-bottom: 30px;
+}
+
+/* CAROUSEL */
+.carousel {
+    position: relative;
+}
+
+/* SCROLL AREA */
+.scroll-wrapper {
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    margin-left: 150px;
+    margin-right: 150px;
+}
+
+.scroll-wrapper::-webkit-scrollbar {
+    height: 6px;
+}
+
+.scroll-wrapper::-webkit-scrollbar-thumb {
+    background: #ff5a1f;
+    border-radius: 10px;
+}
+
+/* TRACK */
+.scroll-track {
+    display: flex;
+    gap: 20px;
+    padding: 10px 0;
+    
+}
+
+/* EQUIPMENT CARD */
+.card {
+    min-width: 260px;
+    height: 180px;
+    border-radius: 15px;
+    overflow: hidden;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: 0.4s;
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 0 20px rgba(255,90,31,0.6);
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* TEAM CARD */
+.team-card {
+    min-width: 230px;
+    height: 280px;
+    padding: 10px;
+    border-radius: 15px;
+    text-align: center;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: 0.4s;
+}
+
+.team-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255,90,31,0.6);
+}
+
+.team-card img {
+    width: 100%;
+    height: 180px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.team-card h3 {
+    margin: 10px 0 5px;
+}
+
+.team-card p {
+    color: #aaa;
+}
+
+/* ARROWS */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+
+    background: rgba(0,0,0,0.6);
+    border: 1px solid rgba(255,255,255,0.2);
+
+    color: #ff5a1f;
+    font-size: 24px;
+    cursor: pointer;
+
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.arrow.left { left: -10px; }
+.arrow.right { right: -10px; }
+
+/* FOOTER */
+.footer {
+    margin-top: 80px;
+    padding: 40px 0;
+    text-align: center;
+    background: rgba(255,255,255,0.05);
+}
+
+.footer h2 {
+    color: #ff5a1f;
+}
+
+.footer p {
+    color: #ccc;
+}
+
+.footer a {
+    color: #ff5a1f;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR (your existing styles from GYM.CSS will apply) -->
+<header class="nav">
+    <div class="nav-left">
+        <img class="logo" src="GYM-LOGO.png">
+    </div>
+
+    <nav class="nav-center">
+        <a href="home.html" class="nav-link">HOME</a>
+        <a href="plans.html" class="nav-link">MEMBERSHIP PLANS</a>
+        <a href="about.html" class="nav-link active">ABOUT US</a>
+    </nav>
+
+    <div class="nav-right">
+        <a href="login.html" class="login-btn-nav">Login</a>
+    </div>
+</header>
+
+<!-- ABOUT -->
+<section class="about container">
+    <h1>About Us</h1>
+    <p>
+        Burn It Gym helps you transform your body and mindset with world-class equipment,
+        expert trainers, and a motivating environment.
+    </p>
+</section>
+
+<!-- EQUIPMENT -->
+<h2 class="section-title">Equipments & Interior</h2>
+
+<div class="carousel container">
+<button class="arrow left" onclick="scrollLeftFunc('equip')">&#10094;</button>
+
+<div class="scroll-wrapper" id="equip">
+    <div class="scroll-track">
+        <div class="card"><img src="imgs/e1.jpeg"></div>
+        <div class="card"><img src="imgs/e2.jpg"></div>
+        <div class="card"><img src="imgs/e4.webp"></div>
+        <div class="card"><img src="imgs/e5.jpeg"></div>
+        <div class="card"><img src="imgs/e6.avif"></div>
+        <div class="card"><img src="imgs/e7.jpeg"></div>
+    </div>
+</div>
+
+<button class="arrow right" onclick="scrollRightFunc('equip')">&#10095;</button>
+</div>
+
+<!-- TEAM -->
+<h2 class="section-title">Our Team</h2>
+
+<div class="carousel container">
+<button class="arrow left" onclick="scrollLeftFunc('team')">&#10094;</button>
+
+<div class="scroll-wrapper" id="team">
+    <div class="scroll-track">
+        <div class="team-card"><img src="imgs/trainer1.webp"><h3>Rahul</h3><p>Coach</p></div>
+        <div class="team-card"><img src="imgs/trainer2.jpg"><h3>Anita</h3><p>Cardio</p></div>
+        <div class="team-card"><img src="imgs/trainer4.webp"><h3>Vikram</h3><p>Strength</p></div>
+        <div class="team-card"><img src="imgs/trainer6.jpeg"><h3>Sneha</h3><p>Yoga</p></div>
+        <div class="team-card"><img src="imgs/trainer8.webp"><h3>Priya</h3><p>Diet</p></div>
+    </div>
+</div>
+
+<button class="arrow right" onclick="scrollRightFunc('team')">&#10095;</button>
+</div>
+
+<!-- FOOTER -->
+<div class="footer container">
+    <h2>Contact Us</h2>
+    <p>📞 +91 9876543210    📧 yourgym@email.com    📍 Goa, India</p>
+    <p>📸 <a href="#">@burnitgym</a></p>
+</div>
+
+<!-- JS -->
+<script>
+function scrollLeftFunc(id) {
+    document.getElementById(id).scrollBy({ left: -300, behavior: 'smooth' });
+}
+function scrollRightFunc(id) {
+    document.getElementById(id).scrollBy({ left: 300, behavior: 'smooth' });
+}
+</script>
+
+</body>
+</html>

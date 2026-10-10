@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Membership Plans</title>
+  <link rel="stylesheet" href="GYM.CSS">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-color: #0b0b0b;
+      color: white;
+    }
+
+    /* HEADER */
+    .header2 {
+      font-size: 40px;
+      text-align: center;
+      margin-top: 100px;
+      letter-spacing: 2px;
+      font-style: italic;
+      font-weight: bold;
+      color: #ff4500;
+    }
+
+    /* SECTION */
+    .plans-section {
+      padding: 30px 40px;
+      text-align: center;
+    }
+
+    .plans-section h2 {
+      font-size: 36px;
+      margin-bottom: 40px;
+      margin-top: 0px;
+    }
+
+    /* CARDS CONTAINER */
+    .plans-container {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    /* CARD */
+    .plan-card {
+      position: relative;
+      width: 300px;
+      height: 380px;
+      border-radius: 15px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .plan-card:hover {
+      transform: scale(1.05);
+    }
+
+    /* IMAGE */
+    .plan-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* PLAN NAME */
+    .plan-name {
+      position: absolute;
+      bottom: 15px;
+      left: 20px;
+      font-size: 24px;
+      font-weight: bold;
+      z-index: 2;
+    }
+
+    /* OVERLAY */
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.85);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: 0.4s ease;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .plan-card:hover .overlay {
+      opacity: 1;
+    }
+
+    .overlay h3 {
+      color: #ff5a1f;
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .overlay p {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      font-size: 24px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    /* BUTTON */
+    .btn {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: #ff5a1f;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: #e04e1a;
+    }
+
+    /* FOOTER */
+.footer {
+    margin-top: 80px;
+    padding: 40px 0;
+    text-align: center;
+    background: rgba(255,255,255,0.05);
+}
+
+.footer h2 {
+    color: #ff5a1f;
+}
+
+.footer p {
+    color: #ccc;
+}
+
+.footer a {
+    color: #ff5a1f;
+}
+
+  </style>
+</head>
+
+<body>
+
+    <header class="nav">
+        <div class="nav-left">
+        <img class="logo" src="GYM-LOGO.png" alt="Music Hub logo">
+
+        </div>
+
+        <nav class="nav-center">
+        <a href="home.html" class="nav-link">HOME</a>
+        <a href="plans.html" class="nav-link active">MEMBERSHIP PLANS</a>
+        <a href="about.html" class="nav-link">ABOUT US</a>
+        
+        </nav>
+
+        <div class="nav-right">
+        <a href="login.html" class="login-btn-nav">Login</a>
+        </div>
+    </header>
+
+  <div class="header2">Membership Plans</div>
+
+  <section class="plans-section">
+    <h2>Choose Your Plan</h2>
+
+    <div class="plans-container">
+
+      <!-- SILVER -->
+      <div class="plan-card">
+        <img src="imgs/silver.jpeg" alt="Silver Plan"> <!-- replace with your image -->
+
+        <div class="plan-name">Silver</div>
+
+        <div class="overlay">
+          <h3>Silver Plan</h3>
+          <p>Access to gym equipment</p>
+          <p>Basic workout guidance</p>
+          <div class="price">₹999 / month</div>
+          <button class="btn" onclick="window.location.href='login.html'">Join Now</button>
+        </div>
+      </div>
+
+      <!-- GOLD -->
+      <div class="plan-card">
+        <img src="imgs/gold.jpeg" alt="Gold Plan">
+
+        <div class="plan-name">Gold</div>
+
+        <div class="overlay">
+          <h3>Gold Plan</h3>
+          <p>All Silver features</p>
+          <p>Personal trainer support</p>
+          <p>Diet consultation</p>
+          <div class="price">₹1999 / month</div>
+          <button class="btn" onclick="window.location.href='login.html'">Join Now</button>
+        </div>
+      </div>
+
+      <!-- DIAMOND -->
+      <div class="plan-card">
+        <img src="imgs/platinum.jpeg" alt="Diamond Plan">
+
+        <div class="plan-name">Platinum</div>
+
+        <div class="overlay">
+          <h3>Platinum Plan</h3>
+          <p>All Gold features</p>
+          <p>1-on-1 coaching</p>
+          <p>Premium support</p>
+          <div class="price">₹2999 / month</div>
+          <button class="btn" onclick="window.location.href='login.html'">Join Now</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <div class="footer container">
+    <h2>Contact Us</h2>
+    <p>📞 +91 9876543210    📧 yourgym@email.com    📍 Goa, India</p>
+    <p>📸 <a href="#">@burnitgym</a></p>
+  </div>
+
+</body>
+</html>
